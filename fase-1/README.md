@@ -109,7 +109,7 @@ necesario subir archivos.
 ### Opción 2: Ejecución local
 
 ```bash
-git clone <URL-del-repositorio>
+git clone <https://github.com/Alexa0723/Proyecto_Modelos1.git>
 cd <nombre-del-repositorio>/fase-1
 pip install -r requirements.txt
 jupyter notebook notebook.ipynb
