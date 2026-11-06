@@ -1,0 +1,131 @@
+{
+  "version": "v1",
+  "fecha_creacion": "2026-11-06T16:33:38",
+  "tipo_problema": "clasificación binaria",
+  "variable_objetivo": "Churn",
+  "significado_etiquetas": {
+    "0": "No: el cliente permanece",
+    "1": "Yes: el cliente abandona"
+  },
+  "algoritmo": "LogisticRegression (scikit-learn), dentro de un Pipeline con el preprocesamiento",
+  "modelo_base": "DummyClassifier (estrategia most_frequent)",
+  "parametros_modelo": {
+    "class_weight": "balanced",
+    "C": 1.0,
+    "penalty": "l2",
+    "solver": "lbfgs",
+    "max_iter": 1000
+  },
+  "semilla": 42,
+  "variables_entrada": [
+    {
+      "nombre": "tenure",
+      "tipo_esperado": "numérico"
+    },
+    {
+      "nombre": "MonthlyCharges",
+      "tipo_esperado": "numérico"
+    },
+    {
+      "nombre": "TotalCharges",
+      "tipo_esperado": "numérico"
+    },
+    {
+      "nombre": "gender",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "SeniorCitizen",
+      "tipo_esperado": "numérico 0/1 (tratado como categórico)"
+    },
+    {
+      "nombre": "Partner",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "Dependents",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "PhoneService",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "MultipleLines",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "InternetService",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "OnlineSecurity",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "OnlineBackup",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "DeviceProtection",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "TechSupport",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "StreamingTV",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "StreamingMovies",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "Contract",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "PaperlessBilling",
+      "tipo_esperado": "texto (categórico)"
+    },
+    {
+      "nombre": "PaymentMethod",
+      "tipo_esperado": "texto (categórico)"
+    }
+  ],
+  "tratamiento_valores_faltantes": {
+    "tenure y MonthlyCharges": "mediana aprendida en entrenamiento",
+    "TotalCharges": "constante 0 (clientes nuevos sin cobros)",
+    "variables categóricas": "categoría más frecuente aprendida en entrenamiento"
+  },
+  "reglas_prediccion": {
+    "columnas_adicionales": "se ignoran (por ejemplo, customerID)",
+    "categorias_no_vistas": "se codifican con todas sus columnas en 0 (handle_unknown='ignore')"
+  },
+  "datos": {
+    "fuente": "Telco Customer Churn (Kaggle): https://www.kaggle.com/datasets/blastchar/telco-customer-churn",
+    "archivo": "WA_Fn-UseC_-Telco-Customer-Churn.csv",
+    "huella_sha256": "88be4b93fbe0cc83421af1c503794c97c342eca914c1576db7c276e61d61358a",
+    "cantidad_observaciones": 7043
+  },
+  "separacion": {
+    "estrategia": "train_test_split estratificado según la variable objetivo",
+    "proporcion_prueba": 0.2,
+    "tamano_entrenamiento": 5634,
+    "tamano_prueba": 1409,
+    "validacion_cruzada": "StratifiedKFold de 5 particiones, solo con entrenamiento"
+  },
+  "metrica_evaluacion": "f1 de la clase 'abandona' (principal); recall, precision, roc_auc y accuracy (complementarias)",
+  "entorno": {
+    "python": "3.13.15",
+    "scikit_learn": "1.6.1",
+    "archivo_dependencias": "requirements.txt"
+  },
+  "codigo": {
+    "commit": "786b08a4dffd4a8022bcad6f31f6b6f19490bbe2",
+    "origen": "git",
+    "cambios_sin_commit": false
+  }
+}
