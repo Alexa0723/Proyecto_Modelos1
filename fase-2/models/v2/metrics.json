@@ -1,0 +1,70 @@
+{
+  "version": "v2",
+  "conjunto_evaluado": "prueba (datos no usados para entrenar)",
+  "metrica_principal": "f1 (clase 'abandona')",
+  "configuracion_elegida": "balanceado",
+  "modelo": {
+    "accuracy": 0.7423704755145494,
+    "precision": 0.5092748735244519,
+    "recall": 0.8074866310160428,
+    "f1": 0.6246122026887281,
+    "roc_auc": 0.8399364488878555,
+    "matriz_confusion": {
+      "verdaderos_negativos": 744,
+      "falsos_positivos": 291,
+      "falsos_negativos": 72,
+      "verdaderos_positivos": 302
+    }
+  },
+  "modelo_base": {
+    "accuracy": 0.7345635202271115,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "matriz_confusion": {
+      "verdaderos_negativos": 1035,
+      "falsos_positivos": 0,
+      "falsos_negativos": 374,
+      "verdaderos_positivos": 0
+    }
+  },
+  "validacion_cruzada_entrenamiento": {
+    "sin_balanceo": {
+      "f1": {
+        "promedio": 0.5922288002713734,
+        "desviacion_estandar": 0.01566979868419864
+      },
+      "recall": {
+        "promedio": 0.5438127090301004,
+        "desviacion_estandar": 0.013310868723834371
+      },
+      "precision": {
+        "promedio": 0.6505026184797454,
+        "desviacion_estandar": 0.02441904816655513
+      },
+      "roc_auc": {
+        "promedio": 0.8458567171479444,
+        "desviacion_estandar": 0.013746355036911989
+      }
+    },
+    "balanceado": {
+      "f1": {
+        "promedio": 0.6269082613491427,
+        "desviacion_estandar": 0.01909849383718724
+      },
+      "recall": {
+        "promedio": 0.8053511705685619,
+        "desviacion_estandar": 0.013610026721990496
+      },
+      "precision": {
+        "promedio": 0.5133970951758873,
+        "desviacion_estandar": 0.0213652678336955
+      },
+      "roc_auc": {
+        "promedio": 0.8456645621844041,
+        "desviacion_estandar": 0.013683083013646201
+      }
+    }
+  }
+}
