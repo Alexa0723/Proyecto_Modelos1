@@ -11,7 +11,7 @@ WORKDIR /app
 
 # 1. Dependencias primero (se reutilizan en caché si requirements.txt no cambia)
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --default-timeout=120 --retries 10 -r requirements.txt
 
 # 2. Código de la aplicación
 COPY src/ ./src/
