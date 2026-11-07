@@ -1,0 +1,33 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Cachés de Python y de pruebas
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Archivos de Git
+.git
+.gitignore
+
+# Configuración local del editor
+.vscode/
+.idea/
+
+# Datos, modelos y resultados: se montan al ejecutar, no van en la imagen
+data/
+models/
+outputs/
+
+# Pruebas y documentación: no son necesarias para ejecutar la aplicación
+tests/
+pytest.ini
+*.md
+
+# Credenciales (nunca deben entrar en la imagen)
+.env
+*.key
+kaggle.json

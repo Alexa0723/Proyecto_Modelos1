@@ -1,0 +1,26 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Cachés de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Cachés de pruebas
+.pytest_cache/
+
+# Resultados generados durante la ejecución
+outputs/
+
+# Configuración local del editor y del sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Credenciales (nunca deben subirse)
+.env
+*.key
+kaggle.json
